@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lining Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+	    .jumbotron{
+	    	background: -moz-linear-gradient(45deg, #F3BA1D 0%, #FFDA77 100%) repeat scroll 0 0 transparent; /* #020031 #6D3353 */
+	    	background: -webkit-linear-gradient(45deg, #F3BA1D 0%, #FFDA77 100%);
+	    	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
+	    	color: #FFFFFF;
+	    	padding: 120px 0 80px;	    	
+	    	position: relative;
+	    	height: 450px;
+		    /*/text-align: center;*/
+		    /*text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075); */
+		  }
+  		.masthead h1{
+  			margin-top: 75px;
+  			font-size: 90px;
+  		}
+  		.container{
+  			width: 1170px;
+  			text-align: center;
+  		}
+  		.masthead p{
+  			font-size: 40px;
+  			font-weight: 200;
+  			line-height: 1.25;
+  		}
+  		body{
+  			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  			background-color: #e2e2e2;
+  		}
+  		.jumbotron a{
+  			-webkit-transition: all .2s ease-in-out;
+  			color: rgba(255, 255, 255, .6);
+  			font-size: 25px;
+  		}
+  		.jumbotron a:hover{
+  			color: white;
+  		}
+  		.footer{
+  			
+  		}
+  		.footer p{
+  			color: #777;
+  		}
+    </style>
+  </head>
+  <body>
+
+  	<!-- ------------------------------   NAVBAR   ----------------------------------  -->
+  	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Lining Design Application</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.html">Home</a>
+              </li>
+              <li class="">
+                <a href="./channel_grass_trm.php">Channel Lining</a>
+              </li>              
+              <li class="">
+                <a href="./generate_report.html">Generate Report</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------------   MASTHEAD   ----------------------------------  -->
+    <div class="jumbotron masthead">
+    	<div class="container">
+    		<h1>Lining Design Application</h1>
+    		<br>
+    		<br>
+    		<p>
+    			Application for determining channel linings based on the procedures outlined in FHWA's HEC15.
+    		</p>
+    		<br>
+    		<ul class="unstyled">
+    			<li><a href="./channel_grass_trm.php">Create New Report</a></li>
+    			<br>
+    			<li><a href="./generate_report.html">Generate Report</a></li>
+    		</ul>
+    	</div>
+    </div>
+
+    <!-- ------------------------------   FOOTER   ----------------------------------   -->
+    <footer class="footer">
+    	<div class="container">
+    		<p>This program is based on the recommended design procedures outlined in FHWA's HEC15. Support for the development of this program was given by the Georgia Department of Transportation.</p>
+    	</div>
+    </footer>
+
+  	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>

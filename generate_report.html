@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .jumbotron{
+        background: -moz-linear-gradient(45deg, #F3BA1D 0%, #FFDA77 100%) repeat scroll 0 0 transparent; /* #020031 #6D3353 #dc5c2a #ffb60b*/
+        background: -webkit-linear-gradient(45deg, #F3BA1D 0%, #FFDA77 100%);
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
+        color: #FFFFFF;
+        padding: 40px 0;
+        position: relative;
+      }
+      .headings{
+        color: #5A5A5A;
+        font-size: 38.5px;
+        line-height: 40px;
+        display: block;
+        padding-top: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- ------------------------------   NAVBAR   ----------------------------------  -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Lining Design Application</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+              <li class="">
+                <a href="./channel_grass_trm.php">Channel Lining</a>
+              </li>              
+              <li class="active">
+                <a href="./generate_report.html">Generate Report</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------------   MASTHEAD   ----------------------------------  -->
+    <header class="jumbotron">
+      <div class="container">
+        <h1 style="font-size: 55px; margin-top: 30px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">Generate Report</h1>
+        <p class="lead">Generate channel lining report</p>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <h1 class="headings">Enter Channel Parameters</h1>
+      
+      <br>
+      <br>
+
+      <form class="form-horizontal" action="get.php">
+        <div class="control-group">
+          <label class="control-label">Project Number</label>
+          <div class="controls">
+            <input type="text" name="project_number" placeholder="Project Number">
+          </div>
+        </div>        
+
+        <div class="control-group">
+          <label class="control-label">Lower Station Limit</label>
+          <div class="controls">
+            <input type="text" name="lower_limit" placeholder="Lower Station Limit">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Upper Station Limit</label>
+          <div class="controls">
+            <input type="text" name="upper_limit" placeholder="Upper Station Limit">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn" style="margin-left: 20px;">Reset</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+
+</html>
