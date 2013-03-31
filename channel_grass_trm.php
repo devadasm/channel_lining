@@ -63,6 +63,9 @@
               <li class="">
                 <a href="./generate_report.html">Generate Report</a>
               </li>
+              <li>
+                <a href="#">Download Calculations</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -85,7 +88,7 @@
 
     <!-- ------------------------------   BODY   ----------------------------------  -->
     <div class="container">
-      <form class="main-form form-horizontal" action="put.php" method="POST">
+      <form class="main-form form-horizontal" name="Lining" action="put.php" method="POST" onsubmit="return validateForm()">
 
         <h1 class="headings">Project & Channel</h1>
 
@@ -236,10 +239,10 @@
               <label class="control-label text">Plasticity Index (PI)</label>
               <div class="controls"><input type="text" name="pi" id="pi" onchange="get_pi()"></div>
             </div>
-            <div class="control-group">
+            <!--div class="control-group">
               <label class="control-label text">Void Ratio (e)</label>
               <div class="controls"><input type="text" name="vr" id="vr" onchange="get_vr()"></div>
-            </div>
+            </div-->
             <h4>For Non-Plastic Soils</h4>
             <div class="control-group">
               <label class="control-label text">Soil D<sub>75</sub></label>
@@ -564,6 +567,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
 
   	<script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
     <script type="text/javascript">
       $('#optionsRadios2').change(function() {
         $('#manning_override').attr("readonly", false);
@@ -575,6 +579,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
         unsetManningOverride();
       });
     </script>
+    
     <!--script type="text/javascript">
       $(function() {
         $('[rel=tooltip]').tooltip();

@@ -29,6 +29,9 @@
               <li class="">
                 <a href="./generate_report.html">Generate Report</a>
               </li>
+              <li>
+                <a href="#">Download Calculations</a>
+              </li>
             </ul>
           </div>
         </div>

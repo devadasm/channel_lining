@@ -77,12 +77,12 @@ function get_soil_classf()
     calculate_permissible_soil_shear_stress();
 }
 
-function get_vr()
+/*function get_vr()
 {
     void_ratio = document.getElementById("vr").value;
     calculate_coeffs();
     calculate_permissible_soil_shear_stress();
-}
+}*/
 
 function get_soilD()
 {
@@ -251,8 +251,8 @@ function calculate_soil_grain_roughness()
 
 function calculate_permissible_soil_shear_stress()
 { 
-        if(void_ratio == undefined || void_ratio == "")
-            return;
+        /*if(void_ratio == undefined || void_ratio == "")
+            return;*/
 
         if(soilD == undefined || soilD == "")
             return;
@@ -290,11 +290,15 @@ function calculate_permissible_soil_shear_stress()
         }
         else
         {
+            permissible_soil_shear_stress = 0.0000;
+        }
+        /*else
+        {
             if(c1 != "" && c2 != "" && c3 != "" && c4 != "" && c5 != "" && c6 != "")
                 permissible_soil_shear_stress = 1.0 * ( (c1 * Math.pow(pi, 2)) + (c2 * pi) + c3 ) * Math.pow((c4 + c5 * void_ratio), 2) * c6;
             else
                 permissible_soil_shear_stress = 0.0;
-        }
+        }*/
 
         //document.getElementById("permissible_soil_shear_stress").value = permissible_soil_shear_stress.toFixed(4);
 
@@ -1253,4 +1257,64 @@ function calculate_recommended_riprap()
 
     document.getElementById("recommended_riprap1").value = output1;
     document.getElementById("recommended_riprap3").value = output3;
+}
+
+function validateForm()
+{
+    var str = "";
+
+    if(channel_geometry == undefined || channel_geometry == "")
+    {
+        str = "Please Enter Channel Geometry";
+        document.Lining.channel_geometry.focus();
+    }
+    if(bottom_width == undefined || bottom_width == "")
+    {
+        str += "\nPlease Enter Bottom Width";
+        document.Lining.bottom_width.focus();
+    }
+    if(long_slope == undefined || long_slope == "")
+    {
+        str += "\nPlease Enter Longitudinal Slope";
+    }
+    if(initial_water_depth == undefined || initial_water_depth == "")
+    {
+        str += "\nPlease Enter Initial Water Depth";
+    }
+    if(discharge == undefined || discharge == "")
+    {
+        str += "\nPlease Enter Discharge";
+    }
+    if(soil_classf == undefined || soil_classf == "")
+    {
+        str += "\nPlease Enter Soil Classification";
+    }
+    if(pi == undefined || pi == "")
+    {
+        str += "\nPlease Enter Plasticity Index";
+    }
+    if(soilD == undefined || soilD == "")
+    {
+        str += "\nPlease Enter Soil D75";
+    }
+    if(grass_type == undefined || grass_type == "")
+    {
+        str += "\nPlease Enter Grass Type";
+    }
+    if(grass_density == undefined || grass_density == "")
+    {
+        str += "\nPlease Enter Density of Grass";
+    }
+    if(stem_height == undefined || stem_height == "")
+    {
+        str += "\nPlease Enter Stem Height";
+    }
+
+    if(str != "")
+    {
+        alert(str);
+        return false;
+    }
+
+    return true;
 }
