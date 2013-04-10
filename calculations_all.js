@@ -25,7 +25,7 @@ var manningOverride = false;
 /*     RIPRAP    */
 var kinematic_viscosity = 0.00001217, specific_gravity_riprap = 2.65, unit_weight_of_water = 62.4, type1 = 1.2, type3 = 0.66;
 
-var riprap_type, riprap_size, avg_flow_depth, shear_velocity, reynolds_number1, reynolds_number3, shields_parameter1, shields_parameter3, safety_factor1, safety_factor3;
+var n1, n3, riprap_type, riprap_size, avg_flow_depth, shear_velocity, reynolds_number1, reynolds_number3, shields_parameter1, shields_parameter3, safety_factor1, safety_factor3;
 
 var minimum_stable_d1, minimum_stable_d3, recommended_riprap1, recommended_riprap3;
 
@@ -838,20 +838,6 @@ function calculate_all()
     /* Iterate */
 
     doIteration();
-
-    /*  RIPRAP  */
-
-    calculate_shear_velocity();
-
-    calculate_reynolds_number();
-
-    calculate_shields_parameter();
-
-    calculate_safety_factor();
-
-    calculate_minimum_stable_d();
-
-    calculate_recommended_riprap();
 }
 
 function calculate_area_of_flow()
@@ -1136,7 +1122,44 @@ function doIteration()
     } 
 }
 
-/*    RIPRAP    */
+
+
+/***********************************  RIPRAP CALCULATIONS  *****************************************************/
+
+function calculate_riprap()
+{
+    calculate_avg_flow_depth();
+
+    calculate_manning_roughness_riprap();
+
+    calculate_shear_velocity();
+
+    calculate_reynolds_number();
+
+    calculate_shields_parameter();
+
+    calculate_safety_factor();
+
+    calculate_minimum_stable_d();
+
+    calculate_recommended_riprap();
+}
+
+function calculate_avg_flow_depth()
+{
+    avg_flow_depth = area_flow / top_width;
+}
+
+function calculate_manning_roughness_riprap()
+{
+    var val1 = avg_flow_depth / type1; // riprap type 1
+    var val3 = avg_flow_depth / type3; // riprap type 3
+
+    var nume = 0.262 * Math.pow(avg_flow_depth, 1/6);
+
+    n1 = nume / (2.25 + (5.23 * Math.log(val1)/Math.log(10)));
+    n3 = nume / (2.25 + (5.23 * Math.log(val3)/Math.log(10)));
+}
 
 function calculate_shear_velocity()
 {
@@ -1157,7 +1180,7 @@ function calculate_shields_parameter()
         shields_parameter1 = (reynolds_number1 - 40000)/(200000-40000) * (0.15 - 0.047) + 0.047;
     }
     else if(reynolds_number1 < 40000)
-    {reynolds_number1
+    {
         shields_parameter1 = 0.047;
     }
     else if(reynolds_number1 >= 200000 )
@@ -1258,6 +1281,15 @@ function calculate_recommended_riprap()
     document.getElementById("recommended_riprap1").value = output1;
     document.getElementById("recommended_riprap3").value = output3;
 }
+
+
+/***********************************  END OF RIPRAP CALCULATIONS  *********************************************/
+
+
+
+
+
+/***********************************  FORM CALCULATIONS  ******************************************************/
 
 function validateForm()
 {

@@ -85,8 +85,8 @@
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
-            <th>Upper Station Limit</th>
             <th>Lower Station Limit</th>
+            <th>Upper Station Limit</th>
             <th>Channel Location</th>
             <th>Permissible Shear Stress</th>
             <th>TRM</th>
@@ -139,8 +139,8 @@
           }
           while ($row = mysql_fetch_assoc($result))
           {
-            $upper_limit = $row["upper_station_limit"];
             $lower_limit = $row["lower_station_limit"];
+            $upper_limit = $row["upper_station_limit"];
             $channel_location = $row["channel_location"];
             $compare_stress = $row["compare_stress"];
             $recommend = $row["recommend"];

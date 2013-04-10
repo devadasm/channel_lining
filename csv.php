@@ -15,7 +15,7 @@
 	}
 
 	$output = fopen('php://output', 'w');
-	fputcsv($output, array('Project Number', 'Upper Limit', 'Lower Limit', 'Channel Location', 'Soil Classification', 'Plasticity Index', 'Void Ratio', 'Soil D75', 
+	fputcsv($output, array('Project Number', 'Upper Limit', 'Lower Limit', 'Channel Location', 'Soil Classification', 'Plasticity Index', 'Soil D75', 
 						   'Permissible Soil Shear Stress', 'Grass Type', 'Stem Height', 'Density of Grass Cover', 'Grass Roughness Coefficient', 'Channel Geometery',
 						   'Side Slope (Left)', 'Side Slope (Right)', 'Channel Bottom Width', 'Longitudinal Slope', 'Initial Water Depth Estimate', 'Discharge',
 						   'Area of Flow', 'Wetted Perimeter', 'Top Width', 'Hydraulic Radius', 'Manning Roughness', 'Final Discharge', 'Average Velocity',

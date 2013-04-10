@@ -68,7 +68,7 @@
         $channel_location = $_POST['channel_location'];
         $soil_classf = $_POST['soil_class'];
         $pi = $_POST['pi'];
-        $vr = $_POST['vr'];
+        /*$vr = $_POST['vr']; */
         $soilD = $_POST['soilD'];
         $pss = $_POST['pss'];
         $grass_type = $_POST['grass_type'];
@@ -100,8 +100,8 @@
         $stable_riprap1 = $_POST['recommended_riprap1'];
         $stable_riprap3 = $_POST['recommended_riprap3'];
 
-        $sql = "INSERT INTO CHANNEL_LINING (project_number, upper_station_limit, lower_station_limit, channel_location, soil_classf, pi, vr, soil_d, perm_soil_shear_stress, grass_type, stem_height, grass_density, grass_roughness_coeff, manning_roughness, chann_geom, left_slope, right_slope, bottom_width, long_slope, init_water_depth, discharge, area_flow, wetted_peri, top_width, hyd_rad, final_discharge, avg_velocity, dis_int_chk, final_depth, shear_stress, perm_soil_stress, compare_stress, recommend, minimum_d50_1, minimum_d50_3, stable_riprap1, stable_riprap3) 
-                VALUES ('$project_number', '$upper_station_limit', '$lower_station_limit', '$channel_location', '$soil_classf', '$pi', '$vr', '$soilD', '$pss', '$grass_type', '$stem_height', '$grass_density', '$grass_roughness_coeff', '$m_roughness', '$channel_geometry', '$left_slope', '$right_slope', '$bottom_width', '$long_slope', '$initial_water_depth', '$discharge', '$area_flow', '$wetted_perimeter', '$top_width', '$hyd_radius', '$final_discharge', '$avg_velocity', '$discharge_interation_check', '$final_depth', '$shear_stress', '$perm_soil_veg_shear_stress', '$comp_2_perm_shear_stress', '$recco_trm_category', '$minimum_d50_1', '$minimum_d50_3', '$stable_riprap1', '$stable_riprap3')";
+        $sql = "INSERT INTO CHANNEL_LINING (project_number, upper_station_limit, lower_station_limit, channel_location, soil_classf, pi, soil_d, perm_soil_shear_stress, grass_type, stem_height, grass_density, grass_roughness_coeff, manning_roughness, chann_geom, left_slope, right_slope, bottom_width, long_slope, init_water_depth, discharge, area_flow, wetted_peri, top_width, hyd_rad, final_discharge, avg_velocity, dis_int_chk, final_depth, shear_stress, perm_soil_stress, compare_stress, recommend, minimum_d50_1, minimum_d50_3, stable_riprap1, stable_riprap3) 
+                VALUES ('$project_number', '$upper_station_limit', '$lower_station_limit', '$channel_location', '$soil_classf', '$pi', '$soilD', '$pss', '$grass_type', '$stem_height', '$grass_density', '$grass_roughness_coeff', '$m_roughness', '$channel_geometry', '$left_slope', '$right_slope', '$bottom_width', '$long_slope', '$initial_water_depth', '$discharge', '$area_flow', '$wetted_perimeter', '$top_width', '$hyd_radius', '$final_discharge', '$avg_velocity', '$discharge_interation_check', '$final_depth', '$shear_stress', '$perm_soil_veg_shear_stress', '$comp_2_perm_shear_stress', '$recco_trm_category', '$minimum_d50_1', '$minimum_d50_3', '$stable_riprap1', '$stable_riprap3')";
 
         if (!mysql_query($sql, $con))
         {

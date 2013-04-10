@@ -75,7 +75,7 @@
 
 
     <!-- ------------------------------   MASTHEAD   ----------------------------------  -->
-    <header class="jumbotron">
+    <header class="jumbotron" >
     	<div class="container">
     		<h1 style="font-size: 55px; margin-top: 30px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">New Channel Lining Project</h1>
     		<p class="lead">Grass, TRM and Riprap</p>
@@ -145,20 +145,20 @@
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label text">Side slope</label>
+              <label class="control-label text">Fore slope</label>
               <div class="controls">
                 <div class="input-prepend input-append">
-                  <span class="add-on">L</span>
+                  <!-- span class="add-on">L</span -->
                   <input type="text" name="left_slope" id="left_slope" onchange="get_leftSlope()">
                   <span class="add-on">ft/ft</span>
                 </div>
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label text">Side slope</label>
+              <label class="control-label text">Back slope</label>
               <div class="controls">
                 <div class="input-prepend input-append">
-                  <span class="add-on">R</span>
+                  <!-- span class="add-on">R</span -->
                   <input type="text" name="right_slope" id="right_slope" onchange="get_rightSlope()">
                   <span class="add-on">ft/ft</span>
                 </div>
@@ -305,14 +305,6 @@ Good: 300 stems/sq-ft
 Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               </div>
             </div>
-
-            <div class="control-group">
-              <label class="control-label text">Manning Roughness</label>
-              <div class="controls">
-                <input type="text" name="manning_override" id="manning_override" readonly="readonly" onchange="overrideManning()">
-              </div>
-            </div>
-
           </div>
           <div class="span6">
             <div class="control-group">
@@ -331,7 +323,21 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               <label class="control-label text">Grass Roughness Coefficient</label>
               <div class="controls"><input type="text" name="grass_roughness_coeff" id="grass_roughness_coeff" readonly="readonly"></div>
             </div>
+          </div>
+        </div>
 
+
+        <h3 class="subheadings">Manning Coefficient Override</h3>
+        <div class="row">
+          <div class="span6">
+            <div class="control-group">
+              <label class="control-label text">Manning Roughness</label>
+              <div class="controls">
+                <input type="text" name="manning_override" id="manning_override" readonly="readonly" onchange="overrideManning()">
+              </div>
+            </div>
+          </div>
+          <div class="span6">
             <div class="control-group" style="margin-left: 20px;">
               <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -339,13 +345,12 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               </label>
               <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                Enter Manning Roughness Manually
+                Enter Manning Roughness Manually<i> [Grass and TRM calculations only]</i>
               </label>
             </div>
           </div>
         </div>
 
-        
         
 
         <br>
@@ -424,7 +429,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               <div class="control-group">
                 <label class="control-label text">Compare to permissible shear stress</label>
                 <div class="controls">
-                  <input type="text" id="comp_2_perm_shear_stress" name="comp_2_perm_shear_stress" readonly="readonly">
+                  <input type="text" id="comp_2_perm_shear_stress" style="border: none; font-weight: bold; color: red;" name="comp_2_perm_shear_stress" readonly="readonly">
                 </div>
               </div>
 
@@ -469,7 +474,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               <br>              
               
               <div class="control-group">
-                <label class="control-label text">Permissible soil/vegetation shear stress</label>
+                <label class="control-label text">Combined permissible vegetated soil shear stress</label>
                 <div class="controls">
                   <div class="input-append">
                     <input type="text" name="perm_soil_veg_shear_stress" id="perm_soil_veg_shear_stress" readonly="readonly">
@@ -481,7 +486,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               <div class="control-group">
                 <label class="control-label text">Recommended TRM category</label>
                 <div class="controls">
-                  <input type="text" id="recco_trm_category" name="recco_trm_category" readonly="readonly">
+                  <input type="text" id="recco_trm_category" style="border: none; font-weight: bold; color: red;" name="recco_trm_category" readonly="readonly">
                 </div>
               </div>
             </div>
@@ -495,6 +500,10 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
           <br>
           <br>
         </div>
+
+        <hr>
+
+        <button class="btn btn-primary" type="button" onclick="calculate_riprap()">Calculate Riprap</button>
 
 
         <br>
@@ -521,7 +530,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               <div class="control-group">
                 <label class="control-label text">Riprap</label>
                 <div class="controls">
-                  <input type="text" id="recommended_riprap1" name="recommended_riprap1" readonly="readonly">
+                  <input type="text" id="recommended_riprap1" style="border: none; font-size: 1.2em; color: red;" name="recommended_riprap1" readonly="readonly">
                 </div>
               </div>
             </div>
@@ -541,7 +550,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
                 <div class="control-group">
                   <label class="control-label text">Riprap</label>
                   <div class="controls">
-                    <input type="text" id="recommended_riprap3" name="recommended_riprap3" readonly="readonly">
+                    <input type="text" style="border: none; font-size: 1.2em; color: red;" id="recommended_riprap3" name="recommended_riprap3" readonly="readonly">
                   </div>
                 </div>
               </div>
@@ -550,6 +559,12 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
         </div>
 
         <br>
+
+        <div class="pull-right">
+          <a href="javascript:;" onclick="jQuery('html,body').animate({scrollTop: jQuery('.jumbotron').offset().top}, 'slow');">  
+            top
+          </a>
+        </div>
 
         <div style="border-top: 1px solid #EEE;"></div>
 
