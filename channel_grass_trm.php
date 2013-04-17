@@ -145,22 +145,22 @@
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label text">Fore slope</label>
+              <label class="control-label text">Fore slope (Horizontal ft per vertical)</label>
               <div class="controls">
                 <div class="input-prepend input-append">
                   <!-- span class="add-on">L</span -->
                   <input type="text" name="left_slope" id="left_slope" onchange="get_leftSlope()">
-                  <span class="add-on">ft/ft</span>
+                  <span class="add-on">ft/ft (H:V)</span>
                 </div>
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label text">Back slope</label>
+              <label class="control-label text">Back slope (Horizontal ft per vertical)</label>
               <div class="controls">
                 <div class="input-prepend input-append">
                   <!-- span class="add-on">R</span -->
                   <input type="text" name="right_slope" id="right_slope" onchange="get_rightSlope()">
-                  <span class="add-on">ft/ft</span>
+                  <span class="add-on">ft/ft (H:V)</span>
                 </div>
               </div>
             </div>
@@ -518,7 +518,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
             <div class="span6">
               <h4 style="margin-left: 25px;">Riprap Type 1</h4>
               <br>
-              <div class="control-group">
+              <!--div class="control-group">
                   <label class="control-label text">Minimum Stable D<sub>50</sub></label>
                   <div class="controls">
                     <div class="input-append">
@@ -526,7 +526,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
                       <span class="add-on">ft</span>
                     </div>
                   </div>
-              </div>
+              </div-->
               <div class="control-group">
                 <label class="control-label text">Riprap</label>
                 <div class="controls">
@@ -538,7 +538,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
               <div class="control-group">
                 <h4 style="margin-left: 25px;">Riprap Type 3</h4>
                 <br>
-                <div class="control-group">
+                <!--div class="control-group">
                   <label class="control-label text">Minimum Stable D<sub>50</sub></label>
                   <div class="controls">
                     <div class="input-append">
@@ -546,7 +546,7 @@ Poor: 100 stems/sq-ft"><img src="questionMark.gif"></a>
                       <span class="add-on">ft</span>
                     </div>
                   </div>
-                </div>
+                </div-->
                 <div class="control-group">
                   <label class="control-label text">Riprap</label>
                   <div class="controls">

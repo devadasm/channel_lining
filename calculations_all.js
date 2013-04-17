@@ -1236,11 +1236,11 @@ function calculate_safety_factor()
 
 function calculate_minimum_stable_d()
 {
-    minimum_stable_d1 = (safety_factor1 * final_depth * long_slope)/(shields_parameter1 * (specific_gravity_riprap - 1))
-    minimum_stable_d3 = (safety_factor3 * final_depth * long_slope)/(shields_parameter3 * (specific_gravity_riprap - 1))
+    minimum_stable_d1 = (safety_factor1 * final_depth * long_slope)/(shields_parameter1 * (specific_gravity_riprap - 1));
+    minimum_stable_d3 = (safety_factor3 * final_depth * long_slope)/(shields_parameter3 * (specific_gravity_riprap - 1));
     
-    document.getElementById("minimum_stable_d1").value = minimum_stable_d1.toFixed(2);
-    document.getElementById("minimum_stable_d3").value = minimum_stable_d3.toFixed(2);
+    /*document.getElementById("minimum_stable_d1").value = minimum_stable_d1.toFixed(2);
+    document.getElementById("minimum_stable_d3").value = minimum_stable_d3.toFixed(2);*/
 }
 
 function calculate_recommended_riprap()
